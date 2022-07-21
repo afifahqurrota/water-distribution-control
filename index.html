@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control-Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="navigasi">
+    <div class="logo">
+        <h2>Water Distribution Control</h2>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="#main">Main Page</a></li>
+            <li><a href="#product">Product</a></li>
+            <li><a href="#creator">Creator</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="banner" id="main">
+    <img src="web-analysis.png">
+    <h1>Monitoring</h1>
+    </div>
+</div>
+
+<div class="box-graph">
+    <h3>Collected Data From Sensors & Actuators</h3>
+    <div class="box-debit">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+        src="https://thingspeak.com/channels/1783094/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
+        </iframe>
+    </div>
+
+    <div class="box-level1">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+        src="https://thingspeak.com/channels/1783094/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
+        </iframe>
+    </div>
+
+    <div class="box-level2">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+        src="https://thingspeak.com/channels/1783094/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
+        </iframe>
+    </div>
+
+    <div class="box-pompa">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+        src="https://thingspeak.com/channels/1783094/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
+        </iframe>
+    </div>
+
+    <div class="box-graphSole">
+        <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+        src="https://thingspeak.com/channels/1783094/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
+        </iframe>
+    </div>
+</div>
+
+<!--controlling-->
+<div class="banner-control">
+    <div class="control-pic">
+        <img src="control room.png">
+    </div>
+    
+    <h1>Controlling</h1>
+    <h3>Controlling Actuator: Pump</h3>
+    <img src="red-removebg-preview.png">
+    </div>
+</div>
+
+<div class="box-control">
+    <a href=""><button> Pump ON </button></a>
+    <a href=""><button> Pump OFF </button></a>
+</div>
+
+<!-- Product -->
+<br id="product"><br><br><br>
+<div class="product-page" >
+    <img src="waterdrop.png">
+    <h1>Product</h1>
+    <div class="exp">
+        <p>a water distribution control system utilizing a water flow 
+            sensor to measure debit and an automatic control valve using 
+            a motor stepper to control the valve rotation degree to 
+            distribute water equally between areas in a different elevation. 
+            The device utilizes an IoT system to monitor the debit 
+            measurement in real-time and allows remote control through 
+            Website to the device.</p>
+    </div>
+</div>
+
+<div class="jeda">
+
+</div>
+
+<!-- Creator -->
+<div class="Creator" id="creator">
+    <img src="contact.png">
+    <h1>Creator</h1>
+    <div class="biodata">
+        <p>Afifah Qurrota Ayun - 40040318650037</p>
+        <p>Teknologi Rekayasa Otomasi</p>
+        <p>Universitas Diponegoro</p>
+    </div>
+</div>
+
+</body>
+</html>
