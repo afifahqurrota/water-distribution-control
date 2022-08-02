@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js">
+    </script>
+
     <title>Control-Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
 
@@ -48,7 +54,7 @@
 
     <div class="box-pompa">
         <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/1783094/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
+        src="https://thingspeak.com/channels/1783094/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
         </iframe>
     </div>
 
@@ -67,14 +73,54 @@
     
     <h1>Controlling</h1>
     <h3>Controlling Actuator: Pump</h3>
-    <img src="red-removebg-preview.png">
+        <img id="RelayImage" src="red-removebg-preview.png" >
     </div>
 </div>
 
 <div class="box-control">
-    <a href=""><button> Pump ON </button></a>
-    <a href=""><button> Pump OFF </button></a>
+    <button type="button" id="relay-on">Pump On</button>
+    <button type="button" id="relay-off">Pump Off</button>
 </div>
+
+<script>   
+    document.getElementById('relay-on').addEventListener('click', function() {
+    var url = "http://api.thingspeak.com/update?api_key=BIDX1IZXU6MGWD0E&field4=1"
+    $.getJSON(url, function(data) {
+    console.log(data);
+    });
+}); 
+    
+    document.getElementById('relay-off').addEventListener('click', function() {
+    var url = "http://api.thingspeak.com/update?api_key=BIDX1IZXU6MGWD0E&field4=0"
+    $.getJSON(url, function(data) {
+    console.log(data);
+    });
+});
+
+    setInterval(function() {
+    getThingSpeakRelayState();
+    }, 15000);
+
+    function getThingSpeakRelayState() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                 if(myObj.field4 == 1) {
+                    document.getElementById("RelayImage").src="green-removebg-preview.png";                        
+                }
+                else {
+                    document.getElementById("RelayImage").src= "red-removebg-preview.png";
+                }
+            }
+        };
+        
+        xhttp.open("GET", "https://api.thingspeak.com/channels/1783094/fields/4.json?", true);
+        xhttp.send();
+    }
+</script>
+
+
 
 <!-- Product -->
 <br id="product"><br><br><br>
