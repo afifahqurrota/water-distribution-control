@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js">
     </script>
 
     <title>Control-Page</title>
@@ -84,14 +84,14 @@
 
 <script>   
     document.getElementById('relay-on').addEventListener('click', function() {
-    var url = "http://api.thingspeak.com/update?api_key=BIDX1IZXU6MGWD0E&field4=1"
+    var url = "https://api.thingspeak.com/update?api_key=BIDX1IZXU6MGWD0E&field4=1"
     $.getJSON(url, function(data) {
     console.log(data);
     });
 }); 
     
     document.getElementById('relay-off').addEventListener('click', function() {
-    var url = "http://api.thingspeak.com/update?api_key=BIDX1IZXU6MGWD0E&field4=0"
+    var url = "https://api.thingspeak.com/update?api_key=BIDX1IZXU6MGWD0E&field4=0"
     $.getJSON(url, function(data) {
     console.log(data);
     });
@@ -114,10 +114,10 @@
                 }
             }
         };
-        
         xhttp.open("GET", "https://api.thingspeak.com/channels/1783094/fields/4.json?", true);
         xhttp.send();
     }
+
 </script>
 
 
