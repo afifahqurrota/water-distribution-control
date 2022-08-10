@@ -60,33 +60,19 @@
 }
 
 .box-graph {
-    background-color: white;
-    height: 950px;
     text-align: center;
+    background-color: white;
+    height: 1500px;
+    display: grid;
+}
+
+.box-debit, .box-level1, .box-level2, .box-pompa, .box-graphSole {
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
 }
 
 .box-graph h3 {
     text-align: center;
     color: #385286;
-}
-
-.box-debit,.box-level1 {
-    padding-top: 30px;
-    padding-left: 40px;
-    padding-bottom: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-top: 6px;
-    float: left;
-}
-
-.box-level2,.box-pompa {
-    margin-top: 6px;
-    padding-left: 40px;
-    margin-left: 80px;
-    margin-right: 80px;
-    padding-bottom: 35px;
-    float: left; 
 }
 
 <!--controlling-->
@@ -101,7 +87,7 @@
 .box-control {
     text-align: center;
     background-color: white;
-    height: 400px;
+    height: 500px;
     color: wheat;
 }
 
