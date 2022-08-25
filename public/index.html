@@ -36,31 +36,31 @@
     <h3>Collected Data From Sensors & Actuators</h3>
     <div class="box-debit">
         <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/1783094/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
+        src="https://thingspeak.com/channels/1840193/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
         </iframe>
     </div>
 
     <div class="box-level1">
         <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/1783094/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
+        src="https://thingspeak.com/channels/1840193/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
         </iframe>
     </div>
 
     <div class="box-level2">
         <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/1783094/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
+        src="https://thingspeak.com/channels/1840193/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
         </iframe>
     </div>
 
     <div class="box-pompa">
         <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/1783094/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
+        src="https://thingspeak.com/channels/1840193/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
         </iframe>
     </div>
 
     <div class="box-graphSole">
         <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/1783094/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
+        src="https://thingspeak.com/channels/1840193/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=step">
         </iframe>
     </div>
 </div>
@@ -84,7 +84,7 @@
 
 <script>   
     document.getElementById('relay-on').addEventListener('click', function() {
-    var url = "https://api.thingspeak.com/update?api_key=BIDX1IZXU6MGWD0E&field4=1"
+    var url = "https://api.thingspeak.com/update?api_key=65PYT6B1V0KZXFVU&field4=1"
     $.getJSON(url, function(data) {
     console.log(data);
     document.getElementById("RelayImage").src="green-removebg-preview.png";  
@@ -92,7 +92,7 @@
 }); 
     
     document.getElementById('relay-off').addEventListener('click', function() {
-    var url = "https://api.thingspeak.com/update?api_key=BIDX1IZXU6MGWD0E&field4=0"
+    var url = "https://api.thingspeak.com/update?api_key=65PYT6B1V0KZXFVU&field4=0"
     $.getJSON(url, function(data) {
     console.log(data);
     document.getElementById("RelayImage").src="red-removebg-preview.png";  
@@ -110,7 +110,7 @@
                 var myObj = JSON.parse(this.responseText);
             }
         };
-        xhttp.open("GET", "https://api.thingspeak.com/channels/1783094/fields/4.json?", true);
+        xhttp.open("GET", "https://api.thingspeak.com/channels/1840193/fields/4.json?", true);
         xhttp.send();
     }
 
